@@ -20,5 +20,13 @@ public class Main {
         // Array of primitive integers
         // Not an dynamic data structure, it's size cannot be changed once created.
         int [] intArray = new int[7];
+
+        for (int i = 0; i < intArray.length; i++) {
+            intArray[i] = 2i+4;
+        }
+
+        for (int i = 0; i < intArray.length; i++) {
+            System.out.println(intArray[i]);
+        }
     }
 }
