@@ -81,3 +81,18 @@ Big (O) Values Table:
 | **Big (O) Notation** | **Provides an objective time complexity that is hardware independent.**
 
 # Quick Review of Arrays in Java
+
+####Arrays
+Contiguous block in memory
+- Resizing an array does not guarantee the extra space added will be in the same contiguous block of memory
+- Static length
+- Block is allocated for that array.
+
+Every element occupies the same amount of space in memory
+- For primitives, the actual primitives will be stored in memory.
+- For Objects, a reference to the Object instances will be stored in memory
+- - The consistent size of a reference allows us to create an Array of objects without violating the constraint that all elements stored in the array occupy the same space.
+
+If an array starts at memory address x, and the size of each element in the array is y, we can calculate the memory address of the ith element by using x+i*y
+- Starting at the 1st at index 0 if we want the 5th element we look 5 indexes forward.
+- If the index of an element is known, the time to get that element will be the same regardless of where the element is stored in the array.
