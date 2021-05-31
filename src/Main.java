@@ -22,7 +22,7 @@ public class Main {
         int [] intArray = new int[7];
 
         for (int i = 0; i < intArray.length; i++) {
-            intArray[i] = 2i+4;
+            intArray[i] = 2*i+4;
         }
 
         for (int i = 0; i < intArray.length; i++) {
