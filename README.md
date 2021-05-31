@@ -85,7 +85,7 @@ Big (O) Values Table:
 ####Arrays
 Contiguous block in memory
 - Resizing an array does not guarantee the extra space added will be in the same contiguous block of memory
-- Static length
+- Static length (Not a dynamic data structure)
 - Block is allocated for that array.
 
 Every element occupies the same amount of space in memory
@@ -96,3 +96,37 @@ Every element occupies the same amount of space in memory
 If an array starts at memory address x, and the size of each element in the array is y, we can calculate the memory address of the ith element by using x+i*y
 - Starting at the 1st at index 0 if we want the 5th element we look 5 indexes forward.
 - If the index of an element is known, the time to get that element will be the same regardless of where the element is stored in the array.
+
+Pros:
+- Retrieving elements if index is known.
+1. Fixed size of element multiplied by index (Offset)
+2. Get the Start address of the array
+3. Add the start address to the result of the multiplication.    
+
+Big (O) Array Operations Values Table:
+
+**Retrieve operation examples:**
+
+| Number of Elements|    Steps to Retrieve |
+| ---- |:----:|
+| 1 | 3 | 
+| 1000 | 3 | 
+| 100000| 3 |
+| 1000000 | 3 |
+| 1000000000 | 3 |
+|Big O| O(1)|
+
+
+Cons:
+- If we don't know the index then the time complexity increases to linear assuming the worst case scenario
+
+| Operation| Time Complexity |
+| ---- |:----:|
+| Retrieve with index | O(1) Constant time | 
+| Retrieve with  no index | Linear time | 
+| Add an element to a full array | O(n) Create a new array and copy operation depends of size of array|
+| Add an element to the end of an array (array has space) | O(1) |
+| Insert of update an element at a specific index| O(1) index is known |
+| Delete an element by setting it to null (known index)| O(1)|
+| Delete an element by setting it to null (unknown index)| Search is required O(n)|
+| Delete an element by shifting elements | Worse case is O(n)|

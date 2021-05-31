@@ -21,12 +21,29 @@ public class Main {
         // Not an dynamic data structure, it's size cannot be changed once created.
         int [] intArray = new int[7];
         //
-        for (int i = 0; i < intArray.length; i++) {
-            intArray[i] = 2*i+4;
-        }
-
+        intArray[0] = 20;
+        intArray[1] = 35;
+        intArray[2] =-15;
+        intArray[3] = 7;
+        intArray[4] = 55;
+        intArray[5] = 1;
+        intArray[6] = -22;
         for (int i = 0; i < intArray.length; i++) {
             System.out.println(intArray[i]);
         }
+
+
+        // Get number 7
+        int index = -1;
+        for (int i = 0; i < intArray.length; i++) {
+            if(intArray[i] == 7) {
+                index = i;
+                break;
+            }
+        }
+        System.out.println("Index of 7: "+index);
+        System.out.println("Considering worse case, 7 was at the end of the array so index will be 7");
+        System.out.println("As the size of the array increases the worst case scenario requires looping to the entire array.");
+        System.out.println("Therefore, the time complexity is linear");
     }
 }
