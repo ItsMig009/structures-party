@@ -15,10 +15,13 @@
  - Big O Notation - A more objective measure than running time.
  - Great for Random Access Memory given the index is known
  */
+
+
+
 public class Main {
-    public static void main(String[] args) {
-        // Array of primitive integers
-        // Not an dynamic data structure, it's size cannot be changed once created.
+    public static void arraysReview(){
+        System.out.println("Array of primitive integers");
+        System.out.println("Not an dynamic data structure, it's size cannot be changed once created");
         int [] intArray = new int[7];
         //
         intArray[0] = 20;
@@ -45,5 +48,21 @@ public class Main {
         System.out.println("Considering worse case, 7 was at the end of the array so index will be 7");
         System.out.println("As the size of the array increases the worst case scenario requires looping to the entire array.");
         System.out.println("Therefore, the time complexity is linear");
+
+        System.out.println("Operation Time Complexity");
+        System.out.println("Retrieve with index. |      O(1) Constant time");
+        System.out.println("Retrieve with  no index |      O(n)Linear time");
+        System.out.println("Add an element to a full array |     O(n) Create a new array and copy operation depends of size of array");
+        System.out.println("Add an element to the end of an array (array has space) |      O(1)");
+        System.out.println("Insert of update an element at a specific index |      O(1) index is known");
+        System.out.println("Delete an element by setting it to null (known index) |      O(1)");
+        System.out.println("Delete an element by setting it to null (unknown index) |       Search is required O(n)");
+        System.out.println("Delete an element by shifting elements |      Worse case is O(n)");
     }
+
+
+    public static void main(String[] args) {
+        arraysReview();
+    }
+
 }
