@@ -130,3 +130,14 @@ Cons:
 | Delete an element by setting it to null (known index)| O(1)|
 | Delete an element by setting it to null (unknown index)| Search is required O(n)|
 | Delete an element by shifting elements | Worse case is O(n)|
+
+
+##Bubble sort
+- Degrades as input size increases
+- Partitions array into 2 partitions
+- - Sorted partition
+- - Unsorted partition
+    
+Logical partitioning (no actual array is  created)
+Steps:
+- Partition array in two

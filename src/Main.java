@@ -48,7 +48,6 @@ public class Main {
         System.out.println("Considering worse case, 7 was at the end of the array so index will be 7");
         System.out.println("As the size of the array increases the worst case scenario requires looping to the entire array.");
         System.out.println("Therefore, the time complexity is linear");
-
         System.out.println("Operation Time Complexity");
         System.out.println("Retrieve with index. |      O(1) Constant time");
         System.out.println("Retrieve with  no index |      O(n)Linear time");
@@ -60,9 +59,70 @@ public class Main {
         System.out.println("Delete an element by shifting elements |      Worse case is O(n)");
     }
 
+    private static void bubbleSort() {
+        int [] intArray = new int[7];
+        intArray[0] = 20;
+        intArray[1] = 35;
+        intArray[2] =-15;
+        intArray[3] = 7;
+        intArray[4] = 55;
+        intArray[5] = 1;
+        intArray[6] = -22;
+
+        System.out.println("+++++++++++++Welcome to bubble sort!+++++++++++++");
+        System.out.println("Input:");
+        for (int k = 0; k < intArray.length; k++) {
+            System.out.println(intArray[k]);
+        }
+        int UnsortedPartitionIndex = intArray.length;
+        int j = 0;
+        System.out.println("For this algorithm we follow the following steps:");
+        System.out.println("Keep 2 variables: One element decreases starting from:" + intArray.length + "to 1."+"Used for keeping the index of the last sorted element in the second partition.");
+        System.out.println("The second variable starts at 0 and ends at length minus one. Used for comparison based swapping operations.");
+        System.out.println("");
+        swap(intArray,j,UnsortedPartitionIndex);
+        System.out.println("Bubble Sort is an in place memory algorithm");
+        System.out.println("The extra memory needed does not depended on the number of items being sorted");
+        System.out.println("That is the swapping of elements is done using local variables and the same memory already allocated is reused.");
+        System.out.println("The length of the array stays the same after sorting is complete.");
+        System.out.println("Time complexity O(n)^2");
+        System.out.println("- This means for 1 item we get 1 step, for 10 items we do 100 steps, for 100 items we do 10000 steps.");
+        System.out.println("Algorithm degrades quickly!!");
+    }
+
+    public static void swap(int [] intArray, int x, int UnsortedPartitionIndex){
+
+        while (UnsortedPartitionIndex != 0) {
+            System.out.println("==========  Round:"+(7-UnsortedPartitionIndex)+"  ==========");
+            for (int j=x;j<intArray.length-1;j++) {
+                if (intArray[j] > intArray[j+1]) {
+                    int temp = intArray[j];
+                    int temp1 = intArray[j+1];
+                    System.out.println("Number "+temp+" was swapped with "+temp1+".");
+                    intArray[j] = intArray[j+1];
+                    intArray[j+1] = temp;
+                }
+            }
+            for (int k = 0; k < intArray.length; k++) {
+                System.out.print(intArray[k]);
+                if(k < intArray.length-1){
+                    System.out.print(", ");
+                }
+
+            }
+            System.out.println();
+            System.out.println("*******************************");
+            System.out.println();
+
+            UnsortedPartitionIndex--;
+        }
+    }
 
     public static void main(String[] args) {
         arraysReview();
+        bubbleSort();
     }
+
+
 
 }
