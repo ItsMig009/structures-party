@@ -143,7 +143,7 @@ public class Main {
         printArrayOfInteger(arr);
         // arraysReview(arr);
         // bubbleSort(arr);
-        insertionSort(arr);
+        //insertionSort(arr);
 
     }
 
