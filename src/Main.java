@@ -52,46 +52,39 @@ public class Main {
         System.out.println("+++++++++++++Welcome to bubble sort!+++++++++++++");
         System.out.println("+++++++++++++A stable sorting algorithm!+++++++++++++");
         System.out.println("Input:");
-
         printArrayOfInteger(intArray);
-        int UnsortedPartitionIndex = intArray.length;
-        int j = 0;
-
         System.out.println("For this algorithm we follow the following steps:");
         System.out.println("Keep 2 variables: One element decreases starting from:" + intArray.length + "to 1."+"Used for keeping the index of the last sorted element in the second partition.");
         System.out.println("The second variable starts at 0 and ends at length minus one. Used for comparison based swapping operations.");
         System.out.println("");
-
-        bubbleSortHelper(intArray,j,UnsortedPartitionIndex);
-
-        System.out.println("Bubble Sort is an in place memory algorithm");
-        System.out.println("The extra memory needed does not depended on the number of items being sorted");
+        int UnsortedPartitionIndex = intArray.length;
+        for (int i = UnsortedPartitionIndex; i>0 ; i--) {
+            for (int j = 0; j < intArray.length - 1; j++) {
+                if(intArray[j] > intArray[j+1]){
+                    int k = j;
+                    int g = j+1;
+                    intArray = swap(intArray,k,g);
+                }
+            }
+        }
+        printArrayOfInteger(intArray);
+        System.out.println("Bubble Sort is an in-place memory algorithm.");
+        System.out.println("The extra memory needed does not depended on the number of items being sorted.");
         System.out.println("That is the swapping of elements is done using local variables and the same memory already allocated is reused.");
         System.out.println("The length of the array stays the same after sorting is complete.");
-        System.out.println("Time complexity O(n)^2");
+        System.out.println("Time complexity O(n)^2.");
         System.out.println("- This means for 1 item we get 1 step, for 10 items we do 100 steps, for 100 items we do 10000 steps.");
         System.out.println("Algorithm degrades quickly!!");
     }
-    public static void bubbleSortHelper(int [] intArray, int x, int UnsortedPartitionIndex){
-
-        while (UnsortedPartitionIndex != 0) {
-            System.out.println("==========  Round:"+(7-UnsortedPartitionIndex)+"  ==========");
-            for (int j=x;j<intArray.length-1;j++) {
-                    if (intArray[j] > intArray[j+1]) {
-                        int temp = intArray[j];
-                        int temp1 = intArray[j+1];
-                        System.out.println("Number "+temp+" was swapped with "+temp1+".");
-                        intArray[j] = intArray[j+1];
-                        intArray[j+1] = temp;
-                        }
-                }
-            }
-            printArrayOfInteger(intArray);
-            System.out.println();
-            System.out.println("*******************************");
-            System.out.println();
-            UnsortedPartitionIndex--;
+    public static int [] swap(int [] intArray, int k, int g){
+        if(k==g){
+            return intArray;
         }
+        int temp = intArray[k];
+        intArray[k] = intArray[g];
+        intArray[g] = temp;
+        return intArray;
+    }
     public static int [] createArray(){
         int [] intArray = new int[7];
         intArray[0] = 30;
@@ -110,6 +103,7 @@ public class Main {
                 System.out.print(", ");
             }
         }
+        System.out.println();
     }
     public static void stableVsUnstableSortAlgorithms(){
 
@@ -117,10 +111,39 @@ public class Main {
         System.out.println("Unstable: Breaks the relative order of duplicate items when sorting elements");
 
     }
+    public static void insertionSort(int [] arr) {
+        int unsortedPartitionIndex = arr.length - 1;
+        int maxValueIndex = 0;
+
+        for (int i = unsortedPartitionIndex; i > 1; i--) {
+            for (int j = 0; j < unsortedPartitionIndex; j++) {
+                if (arr[j] > arr[j+1]) {
+                    System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+                    System.out.println("Array at (j="+j+","+arr[j]+")");
+                    System.out.println("Array at (j+1="+(j+1)+","+ arr[j + 1]+")");
+                    if(arr[j] > arr[maxValueIndex]){
+                        maxValueIndex = j;
+                    }
+                }
+            }
+            System.out.println("!=======================!=====================!========================!===============");
+            System.out.println("Max Value found!!! (" + arr[maxValueIndex] + ") at Max index (" + maxValueIndex + ") Unsorted elements ("+i+")");
+            arr = swap(arr,maxValueIndex,i);
+            System.out.println("*--------------------------------------Max value swapped--------------------------------------*");
+
+            System.out.println();
+            System.out.println();
+            System.out.println("*--------------------------------------Input "+i+"--------------------------------------*");
+            printArrayOfInteger(arr);
+        }
+    }
     public static void main(String[] args) {
         int [] arr = createArray();
-        arraysReview(arr);
-        bubbleSort(arr);
+        System.out.println("*--------------------------------------Initial Input--------------------------------------*");
+        printArrayOfInteger(arr);
+        // arraysReview(arr);
+        // bubbleSort(arr);
+        insertionSort(arr);
 
     }
 

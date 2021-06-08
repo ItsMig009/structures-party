@@ -31,17 +31,17 @@ Example: Making Tea
 
 ## Section 2: Arrays and Big O Notation
 
-####Time Complexity:
+###Time Complexity:
 - Number of steps that take to execute an algorithm 
   
-####Memory Complexity:
+###Memory Complexity:
 - Amount of memory that takes to run an algorithm
 - Not an issue nowadays.
 
 **Important Note!!!**
 - We use the worst case, upper bound, to get the absolute time complexity of the task at hand.
 
-#####Algorithm example:
+###Algorithm example:
 - Add Sugar to Tea:
 - 1. Fetch the bowl containing the sugar
 - 2. Get a spoon
@@ -82,7 +82,7 @@ Big (O) Values Table:
 
 # Quick Review of Arrays in Java
 
-####Arrays
+###Arrays
 Contiguous block in memory
 - Resizing an array does not guarantee the extra space added will be in the same contiguous block of memory
 - Static length (Not a dynamic data structure)
@@ -148,4 +148,8 @@ Steps:
 - This involves 2 for loops and the number of operations is (n*( n-1)) = n^2.
 
 
-##
+### Selection Sort
+- In selection sort:
+- We keep track of the lastUnsortedIndex and current traversed index.
+- We compare each item to find the biggest value
+- We swap the max value with the value at the last unsorted index.
