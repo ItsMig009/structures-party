@@ -50,7 +50,7 @@ public class Main {
     public static void bubbleSort(int [] intArray) {
 
         System.out.println("+++++++++++++Welcome to bubble sort!+++++++++++++");
-        System.out.println("+++++++++++++A stable algorithm!+++++++++++++");
+        System.out.println("+++++++++++++A stable sorting algorithm!+++++++++++++");
         System.out.println("Input:");
 
         printArrayOfInteger(intArray);
