@@ -111,6 +111,12 @@ public class Main {
             }
         }
     }
+    public static void stableVsUnstableSortAlgorithms(){
+
+        System.out.println("Stable: Keeps the relative order of duplicate items when sorting elements");
+        System.out.println("Unstable: Breaks the relative order of duplicate items when sorting elements");
+
+    }
     public static void main(String[] args) {
         int [] arr = createArray();
         arraysReview(arr);
