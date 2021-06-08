@@ -141,3 +141,11 @@ Cons:
 Logical partitioning (no actual array is  created)
 Steps:
 - Partition array in two
+- The memory allocated is reused as elements are swapped.
+- The Big O complexity for Bubble sort is O (N^2)
+- The unsorted partition index is equals to the length of the array.
+- We have to iterate n times and perform n - 1 swapping for each n.
+- This involves 2 for loops and the number of operations is (n*( n-1)) = n^2.
+
+
+##
