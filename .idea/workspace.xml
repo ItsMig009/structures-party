@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e87a91a2-4a4d-44b0-8583-586ff2d633c4" name="Default Changelist" comment="Added definition if stable vs unstable algorithms.">
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    <list default="true" id="e87a91a2-4a4d-44b0-8583-586ff2d633c4" name="Default Changelist" comment="Insertion sort implemented.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623182321479</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Insertion sort implemented.">
+      <created>1623190692490</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1623190692490</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -180,7 +188,8 @@
     <MESSAGE value="Bubble Sort reviewed" />
     <MESSAGE value="Bubble Sort finished." />
     <MESSAGE value="Added definition if stable vs unstable algorithms." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added definition if stable vs unstable algorithms." />
+    <MESSAGE value="Insertion sort implemented." />
+    <option name="LAST_COMMIT_MESSAGE" value="Insertion sort implemented." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

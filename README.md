@@ -132,7 +132,7 @@ Cons:
 | Delete an element by shifting elements | Worse case is O(n)|
 
 
-##Bubble sort
+##Stable Bubble sort
 - Degrades as input size increases
 - Partitions array into 2 partitions
 - - Sorted partition
@@ -140,16 +140,41 @@ Cons:
     
 Logical partitioning (no actual array is  created)
 Steps:
-- Partition array in two
+- Partition array logically in two
 - The memory allocated is reused as elements are swapped.
 - The Big O complexity for Bubble sort is O (N^2)
 - The unsorted partition index is equals to the length of the array.
-- We have to iterate n times and perform n - 1 swapping for each n.
-- This involves 2 for loops and the number of operations is (n*( n-1)) = n^2.
+- We have to iterate n times and perform n - k swappings as k decreases for each n.
+- This involves 2 for loop, and the number of operations is (n*( n-k)) = n^2.
 
 
-### Selection Sort
+### Unstable Selection Sort
 - In selection sort:
-- We keep track of the lastUnsortedIndex and current traversed index.
-- We compare each item to find the biggest value
-- We swap the max value with the value at the last unsorted index.
+- Similar to bubble sort we partition the array in two logical partitions
+- - Sorted (We add elements from right to left in decreasing fashion)
+- - Unsorted  (We find the max element and place it in the sorted partition)
+    
+Steps:
+- Traverse the array to find max number.
+- Swap max number with last unsorted element.
+- Decrement last unsorted element value.
+- Repeat.
+
+
+Based on this design selection sort is not a stable algorithm
+- Elements in the array with equal value are swapped to the last unsorted element if necessary.
+
+Complexity and Characteristics
+- Partition array logically in two
+- The memory allocated is reused as elements are swapped.
+- - The Big O complexity for Selection sort is O (N^2) - Quadratic
+- - 10 items --> 100 steps
+- - 100 items --> 10000 steps
+- - 1000 items --> 1000000 steps
+- Selection sort does not require as much swapping
+- - This is due to the selective nature of the algorithm
+- - Only the max value found is swapped.
+    
+Bubble sort will only perform better than Selection Sort if the array for example is partially sorted.
+- In this case bubble sort might have to perform less swapping.
+- In most regular conditions Selection sort beats Bubble sort in performance.
