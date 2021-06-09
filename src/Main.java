@@ -15,7 +15,7 @@
  - Big O Notation - A more objective measure than running time.
  - Great for Random Access Memory given the index is known
  */
-
+package practice.learnprogramming.structuresparty;
 
 
 public class Main {
@@ -111,7 +111,7 @@ public class Main {
         System.out.println("Unstable: Breaks the relative order of duplicate items when sorting elements");
 
     }
-    public static void insertionSort(int [] arr) {
+    public static void selectionSort(int [] arr) {
         int unsortedPartitionIndex = arr.length - 1;
         int maxValueIndex = 0;
 
@@ -141,9 +141,9 @@ public class Main {
         int [] arr = createArray();
         System.out.println("*--------------------------------------Initial Input--------------------------------------*");
         printArrayOfInteger(arr);
-        // arraysReview(arr);
-        // bubbleSort(arr);
-        //insertionSort(arr);
+        arraysReview(arr);
+        bubbleSort(arr);
+        selectionSort(arr);
 
     }
 
