@@ -19,7 +19,7 @@ package practice.learnprogramming.structuresparty;
 
 
 public class Main {
-    public static void arraysReview(int [] intArray){
+    public static void arraysReview(int[] intArray) {
         System.out.println("Array of primitive integers");
         System.out.println("Not an dynamic data structure, it's size cannot be changed once created");
 
@@ -28,12 +28,12 @@ public class Main {
         // Get number 7
         int index = -1;
         for (int i = 0; i < intArray.length; i++) {
-            if(intArray[i] == 7) {
+            if (intArray[i]==7) {
                 index = i;
                 break;
             }
         }
-        System.out.println("Index of 7: "+index);
+        System.out.println("Index of 7: " + index);
         System.out.println("Considering worse case, 7 was at the end of the array so index will be 7");
         System.out.println("As the size of the array increases the worst case scenario requires looping to the entire array.");
         System.out.println("Therefore, the time complexity is linear");
@@ -47,23 +47,24 @@ public class Main {
         System.out.println("Delete an element by setting it to null (unknown index) |       Search is required O(n)");
         System.out.println("Delete an element by shifting elements |      Worse case is O(n)");
     }
-    public static void bubbleSort(int [] intArray) {
+
+    public static void bubbleSort(int[] intArray) {
 
         System.out.println("+++++++++++++Welcome to bubble sort!+++++++++++++");
         System.out.println("+++++++++++++A stable sorting algorithm!+++++++++++++");
         System.out.println("Input:");
         printArrayOfInteger(intArray);
         System.out.println("For this algorithm we follow the following steps:");
-        System.out.println("Keep 2 variables: One element decreases starting from:" + intArray.length + "to 1."+"Used for keeping the index of the last sorted element in the second partition.");
+        System.out.println("Keep 2 variables: One element decreases starting from:" + intArray.length + "to 1." + "Used for keeping the index of the last sorted element in the second partition.");
         System.out.println("The second variable starts at 0 and ends at length minus one. Used for comparison based swapping operations.");
         System.out.println("");
         int UnsortedPartitionIndex = intArray.length;
-        for (int i = UnsortedPartitionIndex; i>0 ; i--) {
+        for (int i = UnsortedPartitionIndex; i > 0; i--) {
             for (int j = 0; j < intArray.length - 1; j++) {
-                if(intArray[j] > intArray[j+1]){
+                if (intArray[j] > intArray[j + 1]) {
                     int k = j;
-                    int g = j+1;
-                    intArray = swap(intArray,k,g);
+                    int g = j + 1;
+                    intArray = swap(intArray, k, g);
                 }
             }
         }
@@ -76,8 +77,9 @@ public class Main {
         System.out.println("- This means for 1 item we get 1 step, for 10 items we do 100 steps, for 100 items we do 10000 steps.");
         System.out.println("Algorithm degrades quickly!!");
     }
-    public static int [] swap(int [] intArray, int k, int g){
-        if(k==g){
+
+    private static int[] swap(int[] intArray, int k, int g) {
+        if (k==g) {
             return intArray;
         }
         int temp = intArray[k];
@@ -85,66 +87,98 @@ public class Main {
         intArray[g] = temp;
         return intArray;
     }
-    public static int [] createArray(){
-        int [] intArray = new int[7];
+
+    private static int[] createArray() {
+        int[] intArray = new int[7];
         intArray[0] = 30;
         intArray[1] = 42;
-        intArray[2] =-32;
+        intArray[2] = -32;
         intArray[3] = -3;
         intArray[4] = 59;
         intArray[5] = 0;
         intArray[6] = -1;
         return intArray;
     }
-    public static void printArrayOfInteger(int [] intArray){
+
+    private static void printArrayOfInteger(int[] intArray) {
         for (int k = 0; k < intArray.length; k++) {
             System.out.print(intArray[k]);
-            if(k < intArray.length-1){
+            if (k < intArray.length - 1) {
                 System.out.print(", ");
             }
         }
         System.out.println();
     }
-    public static void stableVsUnstableSortAlgorithms(){
+
+    public static void stableVsUnstableSortAlgorithms() {
 
         System.out.println("Stable: Keeps the relative order of duplicate items when sorting elements");
         System.out.println("Unstable: Breaks the relative order of duplicate items when sorting elements");
 
     }
-    public static void selectionSort(int [] arr) {
+
+    public static void selectionSort(int[] arr) {
         int unsortedPartitionIndex = arr.length - 1;
         int maxValueIndex = 0;
 
         for (int i = unsortedPartitionIndex; i > 1; i--) {
             for (int j = 0; j < unsortedPartitionIndex; j++) {
-                if (arr[j] > arr[j+1]) {
-                    System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-                    System.out.println("Array at (j="+j+","+arr[j]+")");
-                    System.out.println("Array at (j+1="+(j+1)+","+ arr[j + 1]+")");
-                    if(arr[j] > arr[maxValueIndex]){
+                if (arr[j] > arr[j + 1]) {
+//                    System.out.println("+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+//                    System.out.println("Array at (j=" + j + "," + arr[j] + ")");
+//                    System.out.println("Array at (j+1=" + (j + 1) + "," + arr[j + 1] + ")");
+                    if (arr[j] > arr[maxValueIndex]) {
                         maxValueIndex = j;
                     }
                 }
             }
             System.out.println("!=======================!=====================!========================!===============");
-            System.out.println("Max Value found!!! (" + arr[maxValueIndex] + ") at Max index (" + maxValueIndex + ") Unsorted elements ("+i+")");
-            arr = swap(arr,maxValueIndex,i);
+            System.out.println("Max Value found!!! (" + arr[maxValueIndex] + ") at Max index (" + maxValueIndex + ") Unsorted elements (" + i + ")");
+            arr = swap(arr, maxValueIndex, i);
             System.out.println("*--------------------------------------Max value swapped--------------------------------------*");
 
             System.out.println();
             System.out.println();
-            System.out.println("*--------------------------------------Input "+i+"--------------------------------------*");
+            System.out.println("*--------------------------------------Input " + i + "--------------------------------------*");
             printArrayOfInteger(arr);
         }
     }
-    public static void main(String[] args) {
-        int [] arr = createArray();
-        System.out.println("*--------------------------------------Initial Input--------------------------------------*");
-        printArrayOfInteger(arr);
-        arraysReview(arr);
-        bubbleSort(arr);
-        selectionSort(arr);
 
+    private static void insertionSort(int[] arr) {
+        printArrayOfInteger(arr);
+
+        // starting with element at position zero in the sorted array
+        // we compare element at position zero with the first element of the sorted array at position one
+        // if the element at position 1 is less than element at position zero then we shift element at position zero
+        // and insert element at position one.
+        // if element at position 1 is greater, we do nothing.
+        for (int firstUnsortedIndex = 1; firstUnsortedIndex < arr.length; firstUnsortedIndex++) {
+            int currentElement = arr[firstUnsortedIndex];
+            int i; // declared outside the loop so that the index value is kept after the loop
+            // this condition arr[i - 1] > currentElement keeps is in the right position for insertion.
+            for (i = firstUnsortedIndex; i > 0 && arr[i - 1] > currentElement; i--) {
+                shiftRight(arr, i - 1);
+            }
+            arr[i] = currentElement;
+        }
+        printArrayOfInteger(arr);
+
+    }
+
+    private static void shiftRight(int[] arr, int i) {
+        arr[i + 1] = arr[i];
+    }
+
+    public static void main(String[] args) {
+        int[] arr = createArray();
+        System.out.println("*--------------------------------------Initial Input--------------------------------------*");
+//        printArrayOfInteger(arr);
+//        arraysReview(arr);
+//        bubbleSort(arr);
+//        selectionSort(arr);
+        insertionSort(arr);
+        System.out.println("*--------------------------------------Result Output--------------------------------------*");
+        System.out.println();
     }
 
 }
