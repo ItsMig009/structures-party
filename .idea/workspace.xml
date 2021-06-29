@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e87a91a2-4a4d-44b0-8583-586ff2d633c4" name="Default Changelist" comment="Corrected typo of Insertion to Selection.">
-      <change afterPath="$PROJECT_DIR$/.idea/saveactions_settings.xml" afterDir="false" />
+    <list default="true" id="e87a91a2-4a4d-44b0-8583-586ff2d633c4" name="Default Changelist" comment="Implemented Insertion sort.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
@@ -189,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1623281665817</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Implemented Insertion sort.">
+      <created>1624585508004</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1624585508004</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -225,7 +231,8 @@
     <MESSAGE value="Insertion sort implemented." />
     <MESSAGE value="Selection sort implemented." />
     <MESSAGE value="Corrected typo of Insertion to Selection." />
-    <option name="LAST_COMMIT_MESSAGE" value="Corrected typo of Insertion to Selection." />
+    <MESSAGE value="Implemented Insertion sort." />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented Insertion sort." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

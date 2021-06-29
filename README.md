@@ -228,3 +228,22 @@ Complexity and Characteristics
     - 100 items --> 10000 steps
     - 1000 items --> 1000000 steps
 - Stable Algorithm
+
+Nugget: As the elements in the array are more sorted the insertion sort algorithm improves its time complexity.
+- It can be nearly ran in linear time. The amount of shifting will be reduced.
+
+#### Shell Sort
+
+- Insertion sort with preliminary sorting.
+- If there is some preliminary sorted, the shifting operation will be executed less times.
+
+- Shell sort is a variation of insertion sort.
+- As the algorithm progresses the gap value is reduces.
+- There are many theories for shell sort that propose different gap values.
+- When the gap value reduces to 1 shell become insertion sort.
+- Once Insertion Sort starts the algorithm is nearly sorted and this reduces the amount of shifting.
+
+Steps:
+- Initialize gap to length of the array divided by 2.
+- The gap value will be divided by two on each iteration.
+- 

@@ -89,7 +89,7 @@ public class Main {
     }
 
     private static int[] createArray() {
-        int[] intArray = new int[7];
+        int[] intArray = new int[10];
         intArray[0] = 30;
         intArray[1] = 42;
         intArray[2] = -32;
@@ -97,6 +97,10 @@ public class Main {
         intArray[4] = 59;
         intArray[5] = 0;
         intArray[6] = -1;
+        intArray[7] = -22;
+        intArray[8] = -90;
+        intArray[9] = -100;
+
         return intArray;
     }
 
@@ -169,6 +173,32 @@ public class Main {
         arr[i + 1] = arr[i];
     }
 
+    private static void shellSort(int[] arr) {
+        printArrayOfInteger(arr);
+        // Initialize and reduce gap value
+        for (int gap = arr.length / 2; gap > 0; gap /= 2) {
+
+
+            for(int i = gap;i < arr.length; i++){
+                int newElement = arr[i];
+                int j = i;
+
+                while (j >= gap && arr[j-gap] > newElement){
+                    // starting from the gap number we shift elements found to be less than elements gap positions to the left.
+                    arr[j] = arr[j-gap];
+                    // gap is subtracted from j to exit the loop since we reached the front of the array.
+                    j -= gap;
+                }
+                // j is reduced and holds the place for the shidted element.
+                arr[j] = newElement;
+
+            }
+        }
+        printArrayOfInteger(arr);
+    }
+
+
+
     public static void main(String[] args) {
         int[] arr = createArray();
         System.out.println("*--------------------------------------Initial Input--------------------------------------*");
@@ -176,7 +206,8 @@ public class Main {
 //        arraysReview(arr);
 //        bubbleSort(arr);
 //        selectionSort(arr);
-        insertionSort(arr);
+        //insertionSort(arr);
+        shellSort(arr);
         System.out.println("*--------------------------------------Result Output--------------------------------------*");
         System.out.println();
     }
