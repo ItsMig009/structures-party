@@ -177,26 +177,44 @@ public class Main {
         printArrayOfInteger(arr);
         // Initialize and reduce gap value
         for (int gap = arr.length / 2; gap > 0; gap /= 2) {
-
-
+            // Iterate each sub-array starting at gave value gap/2 and ending in 1.
+            // When gap is 1, insertion sort starts at position 1 and comparing each element behind.
             for(int i = gap;i < arr.length; i++){
-                int newElement = arr[i];
-                int j = i;
+                int newElement = arr[i]; // store current element at i
+                int index = i; // store the index for shifting
 
-                while (j >= gap && arr[j-gap] > newElement){
-                    // starting from the gap number we shift elements found to be less than elements gap positions to the left.
-                    arr[j] = arr[j-gap];
-                    // gap is subtracted from j to exit the loop since we reached the front of the array.
-                    j -= gap;
+                while (index >= gap && arr[index-gap] > newElement){
+                    // element on the right is stored to the left of the array
+                    arr[index] = arr[index-gap];
+                    // index minus the gap allows for one shift only
+                    index -= gap;
                 }
-                // j is reduced and holds the place for the shidted element.
-                arr[j] = newElement;
-
+                // new Element is inserted in place of element found to be greater.
+                arr[index] = newElement;
             }
         }
         printArrayOfInteger(arr);
     }
 
+
+
+    private static void shellSortP(int [] arr){
+
+        for (int gap = arr.length / 2; gap > 0; gap/=2) {
+
+            for (int i = gap; i < arr.length; i++) {
+                int newElement = arr[i];
+                int index = i;
+
+                while(index >= gap && arr[index-gap] > newElement){
+                    arr[index] = arr[index-gap];
+                    index-=gap;
+                }
+                arr[index] = newElement;
+            }
+        }
+        printArrayOfInteger(arr);
+    }
 
 
     public static void main(String[] args) {
@@ -207,9 +225,10 @@ public class Main {
 //        bubbleSort(arr);
 //        selectionSort(arr);
         //insertionSort(arr);
-        shellSort(arr);
+        shellSortP(arr);
         System.out.println("*--------------------------------------Result Output--------------------------------------*");
         System.out.println();
     }
+
 
 }

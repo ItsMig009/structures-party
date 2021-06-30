@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e87a91a2-4a4d-44b0-8583-586ff2d633c4" name="Default Changelist" comment="Implemented Insertion sort.">
+    <list default="true" id="e87a91a2-4a4d-44b0-8583-586ff2d633c4" name="Default Changelist" comment="Optimized Insertion Sort to Shell sort by presorting array using higher gap values.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
@@ -195,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624585508004</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Optimized Insertion Sort to Shell sort by presorting array using higher gap values.">
+      <created>1624927076199</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1624927076199</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -232,7 +239,8 @@
     <MESSAGE value="Selection sort implemented." />
     <MESSAGE value="Corrected typo of Insertion to Selection." />
     <MESSAGE value="Implemented Insertion sort." />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented Insertion sort." />
+    <MESSAGE value="Optimized Insertion Sort to Shell sort by presorting array using higher gap values." />
+    <option name="LAST_COMMIT_MESSAGE" value="Optimized Insertion Sort to Shell sort by presorting array using higher gap values." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

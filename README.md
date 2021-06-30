@@ -246,4 +246,8 @@ Nugget: As the elements in the array are more sorted the insertion sort algorith
 Steps:
 - Initialize gap to length of the array divided by 2.
 - The gap value will be divided by two on each iteration.
-- 
+- Iterate the array starting from gap value
+- For each value compare the current element to the element gap times away to the left and if it is less swap it.
+  - All the lower values will be swapped to the left side of the array.
+  
+- Once the gap gets to one the insertion sort will be executed.
