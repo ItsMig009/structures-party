@@ -250,4 +250,19 @@ Steps:
 - For each value compare the current element to the element gap times away to the left and if it is less swap it.
   - All the lower values will be swapped to the left side of the array.
   
-- Once the gap gets to one the insertion sort will be executed.
+- Once the gap gets to one, the insertion sort will be executed.
+
+#### Recursion
+ - Recursive methods are methods that call themselves using a smaller.
+
+
+- Steps:
+  - Iterative
+    - If num is 0, then factorial is 1, and we stop.
+    - Otherwise
+      - Set multiplier to 1
+      - Set factorial to 1
+      - while Num is not 1
+      - Increment multiplier
+      - Multiply factorial times Multiplier
+      - Assign result to factorial

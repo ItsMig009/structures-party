@@ -18,8 +18,11 @@
 package practice.learnprogramming.structuresparty;
 
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 public class Main {
-    public static void arraysReview(int[] intArray) {
+    private static void arraysReview(int[] intArray) {
         System.out.println("Array of primitive integers");
         System.out.println("Not an dynamic data structure, it's size cannot be changed once created");
 
@@ -48,7 +51,55 @@ public class Main {
         System.out.println("Delete an element by shifting elements |      Worse case is O(n)");
     }
 
-    public static void bubbleSort(int[] intArray) {
+    private static void printArrayOfInteger(int[] intArray) {
+        for (int k = 0; k < intArray.length; k++) {
+            System.out.print(intArray[k]);
+            if (k < intArray.length - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println();
+    }
+    private static ArrayList createArrays() {
+        ArrayList list = new ArrayList<int[]>();
+        ArrayList<Integer> random = new ArrayList<Integer>();
+        ArrayList<Integer> random1 = new ArrayList<Integer>();
+        random.add(20);
+        random.add(30);
+        random.add(15);
+        random.add(10);
+        random.add(7);
+        random.add(5);
+        random.add(1);
+        random.add(10);
+        random.add(50);
+        random.add(20);
+
+        random1.add(20);
+        random1.add(30);
+        random1.add(15);
+        random1.add(10);
+        random1.add(7);
+        random1.add(5);
+        random1.add(1);
+        random1.add(10);
+        random1.add(50);
+        random1.add(20);
+        list.add(random);
+        list.add(random1);
+        return list;
+    }
+    private static void printArrayOfIntObjects(ArrayList<Integer> arrOfInts) {
+        // assume Integer
+        Iterator<Integer> it = arrOfInts.iterator();
+        if (it.hasNext()) {
+            System.out.print(it.next());
+        }
+        while (it.hasNext()) {
+            System.out.print(", " + it.next());
+        }
+    }
+    private static void bubbleSort(int[] intArray) {
 
         System.out.println("+++++++++++++Welcome to bubble sort!+++++++++++++");
         System.out.println("+++++++++++++A stable sorting algorithm!+++++++++++++");
@@ -77,7 +128,6 @@ public class Main {
         System.out.println("- This means for 1 item we get 1 step, for 10 items we do 100 steps, for 100 items we do 10000 steps.");
         System.out.println("Algorithm degrades quickly!!");
     }
-
     private static int[] swap(int[] intArray, int k, int g) {
         if (k==g) {
             return intArray;
@@ -87,8 +137,7 @@ public class Main {
         intArray[g] = temp;
         return intArray;
     }
-
-    private static int[] createArray() {
+    private static int[] createArrayToSort() {
         int[] intArray = new int[10];
         intArray[0] = 30;
         intArray[1] = 42;
@@ -103,25 +152,43 @@ public class Main {
 
         return intArray;
     }
+    private static int[] createArrayOfPrices() {
+        int[] intArray = new int[10];
+        intArray[0] = 20;
+        intArray[1] = 30;
+        intArray[2] = 15;
+        intArray[3] = 10;
+        intArray[4] = 70;
+        intArray[5] = 20;
+        intArray[6] = 15;
+        intArray[7] = 10;
+        intArray[8] = 5;
+        intArray[9] = 1;
 
-    private static void printArrayOfInteger(int[] intArray) {
-        for (int k = 0; k < intArray.length; k++) {
-            System.out.print(intArray[k]);
-            if (k < intArray.length - 1) {
-                System.out.print(", ");
-            }
-        }
-        System.out.println();
+        return intArray;
     }
+    private static int[] createAnotherArrayOfPrices() {
+        int[] intArray = new int[10];
+        intArray[0] = 20;
+        intArray[1] = 30;
+        intArray[2] = 50;
+        intArray[3] = 45;
+        intArray[4] = 50;
+        intArray[5] = 100;
+        intArray[6] = 40;
+        intArray[7] = 30;
+        intArray[8] = 20;
+        intArray[9] = 10;
 
-    public static void stableVsUnstableSortAlgorithms() {
+        return intArray;
+    }
+    private static void stableVsUnstableSortAlgorithms() {
 
         System.out.println("Stable: Keeps the relative order of duplicate items when sorting elements");
         System.out.println("Unstable: Breaks the relative order of duplicate items when sorting elements");
 
     }
-
-    public static void selectionSort(int[] arr) {
+    private static void selectionSort(int[] arr) {
         int unsortedPartitionIndex = arr.length - 1;
         int maxValueIndex = 0;
 
@@ -147,7 +214,6 @@ public class Main {
             printArrayOfInteger(arr);
         }
     }
-
     private static void insertionSort(int[] arr) {
         printArrayOfInteger(arr);
 
@@ -168,11 +234,9 @@ public class Main {
         printArrayOfInteger(arr);
 
     }
-
     private static void shiftRight(int[] arr, int i) {
         arr[i + 1] = arr[i];
     }
-
     private static void shellSort(int[] arr) {
         printArrayOfInteger(arr);
         // Initialize and reduce gap value
@@ -195,9 +259,6 @@ public class Main {
         }
         printArrayOfInteger(arr);
     }
-
-
-
     private static void shellSortP(int [] arr){
 
         for (int gap = arr.length / 2; gap > 0; gap/=2) {
@@ -215,20 +276,83 @@ public class Main {
         }
         printArrayOfInteger(arr);
     }
+    private static int factorialRecursive(int num) {
+        if (num == 0 || num == 1){
+            return 1;
+        }
+        return num * factorialRecursive(num-1);
+    }
+    private static int maxProfit(int[] stockPrices) {
+        int possibleMaxProfit = 0;
+        int maxProfit = -10000;
+        int minPrice = 0;
+        int maxPrice = 0;
+        if(stockPrices.length > 1){
+            minPrice = stockPrices[0];
+            maxPrice = minPrice;
+            System.out.println("Initial Min Price is:" + minPrice);
+            System.out.println("Initial Max Price is:" + maxPrice);
 
+        }
 
+        for (int i = 1; i < stockPrices.length; i++) {
+
+            // new min price found, look ahead and find new possible max profit
+            if(stockPrices[i] < minPrice){
+                System.out.println("New Min Price found . . .");
+                minPrice = stockPrices[i];
+                // reset max price and possible max profit
+                maxPrice = minPrice;
+                possibleMaxProfit = stockPrices[i] - stockPrices[i-1];
+                System.out.println("Min and Max Price reset to:" + minPrice );
+                System.out.println("Max profit is now: "+ possibleMaxProfit);
+            }
+
+            if (stockPrices[i] > maxPrice){
+                System.out.println("New Max Price found . . .");
+                // if new max price, update max price and recalculate possibleMaxProfit
+                maxPrice = stockPrices[i];
+                System.out.println("Max Price changed to:" + maxPrice);
+                possibleMaxProfit = maxPrice - minPrice;
+                System.out.println("Max profit updated to: "+ possibleMaxProfit);
+            }
+
+            if(possibleMaxProfit > maxProfit){
+                maxProfit = possibleMaxProfit;
+            }
+        }
+        System.out.println("Max profit is: "+ maxProfit);
+        return  maxProfit;
+    }
     public static void main(String[] args) {
-        int[] arr = createArray();
         System.out.println("*--------------------------------------Initial Input--------------------------------------*");
-//        printArrayOfInteger(arr);
-//        arraysReview(arr);
-//        bubbleSort(arr);
-//        selectionSort(arr);
-        //insertionSort(arr);
-        shellSortP(arr);
+        int[] arr1 = createArrayOfPrices();
+        int[] arr2 = createAnotherArrayOfPrices();
+        int[] arr3 = createDecreasingArrayOfPrices();
+
+        printArrayOfInteger(arr1);
+        System.out.println(new StringBuilder().append("The max profit is:").append(maxProfit(arr1)));
+        System.out.println("*----------------------------------------------------------------------------------------*");
+
+        printArrayOfInteger(arr2);
+        System.out.println(new StringBuilder().append("The max profit is:").append(maxProfit(arr2)));
+        System.out.println("*----------------------------------------------------------------------------------------*");
+
+        printArrayOfInteger(arr3);
+        System.out.println(new StringBuilder().append("The max profit is:").append(maxProfit(arr3)));
+        System.out.println("*----------------------------------------------------------------------------------------*");
+
         System.out.println("*--------------------------------------Result Output--------------------------------------*");
         System.out.println();
     }
 
+    private static int[] createDecreasingArrayOfPrices() {
+        int[] intArray = new int[10];
+        intArray[0] = 100;
 
+        for (int i = 1; i < intArray.length; i++) {
+            intArray[i] = intArray[i-1] - 5;
+        }
+        return intArray;
+    }
 }
