@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Main {
+
     private static void arraysReview(int[] intArray) {
         System.out.println("Array of primitive integers");
         System.out.println("Not an dynamic data structure, it's size cannot be changed once created");
@@ -324,6 +325,24 @@ public class Main {
         System.out.println("Max profit is: "+ maxProfit);
         return  maxProfit;
     }
+    private static int maxProfitOptimized(int[] stockPrices) {
+
+        if(stockPrices.length < 2){
+            throw new IllegalArgumentException("Getting a profit requires at least 2 prices");
+        }
+        // Initialize
+        int minPrice = stockPrices[0];
+        int maxProfit = stockPrices[1] - stockPrices[0];;
+
+        for (int i = 1; i < stockPrices.length; i++) {
+            int currentPrice = stockPrices[i];
+            int potentialProfit = currentPrice - minPrice;
+            maxProfit = Math.max(maxProfit, potentialProfit);
+            minPrice = Math.min(minPrice, currentPrice);
+        }
+        return  maxProfit;
+    }
+
     public static void main(String[] args) {
         System.out.println("*--------------------------------------Initial Input--------------------------------------*");
         int[] arr1 = createArrayOfPrices();
@@ -331,15 +350,15 @@ public class Main {
         int[] arr3 = createDecreasingArrayOfPrices();
 
         printArrayOfInteger(arr1);
-        System.out.println(new StringBuilder().append("The max profit is:").append(maxProfit(arr1)));
+        System.out.println(new StringBuilder().append("The max profit is:").append(maxProfitOptimized(arr1)));
         System.out.println("*----------------------------------------------------------------------------------------*");
 
         printArrayOfInteger(arr2);
-        System.out.println(new StringBuilder().append("The max profit is:").append(maxProfit(arr2)));
+        System.out.println(new StringBuilder().append("The max profit is:").append(maxProfitOptimized(arr2)));
         System.out.println("*----------------------------------------------------------------------------------------*");
 
         printArrayOfInteger(arr3);
-        System.out.println(new StringBuilder().append("The max profit is:").append(maxProfit(arr3)));
+        System.out.println(new StringBuilder().append("The max profit is:").append(maxProfitOptimized(arr3)));
         System.out.println("*----------------------------------------------------------------------------------------*");
 
         System.out.println("*--------------------------------------Result Output--------------------------------------*");
